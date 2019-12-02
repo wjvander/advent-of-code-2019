@@ -33,7 +33,7 @@ namespace CodeKata.Day02
                 95, 6, 1200, 2, 99, 10, 4800, 1, 103, 6, 4802, 2, 6, 107, 9604, 1, 13, 111, 9609, 2, 115, 10, 38436, 1, 119, 5, 38437, 2, 10, 123, 153748, 2, 127, 9, 461244, 1, 5, 131, 461245, 2, 10,
                 135, 1844980, 2, 139, 9, 5534940, 1, 143, 2, 5534942, 1, 5, 147, 0, 99, 2, 0, 14, 0
             })]
-        public void Run_GivenIntOpCode_ReturnsResult(int[] instruction, int[] expectedOutput)
+        public void Run_GivenInstruction_ReturnsResult(int[] instruction, int[] expectedOutput)
         {
             var intOpRunner = new InstructionProcessor();
             var result = intOpRunner.Process(instruction);
@@ -41,7 +41,7 @@ namespace CodeKata.Day02
         }
 
         [Fact]
-        public void Test()
+        public void GivenResult_Should_CalculateInstruction()
         {
             var instruction = new[]
             {

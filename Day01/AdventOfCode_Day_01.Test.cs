@@ -19,7 +19,7 @@ namespace CodeKata.Day01
         }
 
         [Fact]
-        public void GetTotalFuelRequired_GivenTwoMasses_ReturnsTotalFuelRequired()
+        public void GetTotalFuelRequired_GivenMultipleMasses_ReturnsTotalFuelRequired()
         {
             var moduleMasses = new[]
             {
