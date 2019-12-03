@@ -51,8 +51,10 @@ namespace CodeKata.Day02
                 147, 0, 99, 2, 0, 14, 0
             };
 
-            var nouns = Enumerable.Range(0, 99);
-            var verbs = Enumerable.Range(0, 99);
+            const int expectedVerb = 19690720;
+
+            var nouns = Enumerable.Range(0, 99).ToList();
+            var verbs = Enumerable.Range(0, 99).ToList();
 
             foreach (var noun in nouns)
             {
@@ -60,12 +62,14 @@ namespace CodeKata.Day02
                 {
                     var iterationInstruction = new int[instruction.Length];
                     instruction.CopyTo(iterationInstruction, 0);
+
                     iterationInstruction[1] = noun;
                     iterationInstruction[2] = verb;
 
                     var instructionRunner = new InstructionProcessor();
                     var output = instructionRunner.Process(iterationInstruction);
-                    if (output[0] == 19690720)
+
+                    if (output[0] == expectedVerb)
                     {
                         _testOutputHelper.WriteLine($"Result: {string.Join(",", iterationInstruction)}");
                         _testOutputHelper.WriteLine($"Verb: {verb}");
